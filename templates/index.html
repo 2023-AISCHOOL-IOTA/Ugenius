@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="POST" action="http://127.0.0.1:5000/predict">
+        <h3> Prediction Result: {{Result}}</h3>
+        <h3>ESP32 Analog Value</h3>
+        {% if value <= 100 %}
+            <img src="/templates/graybtn.jpg" alt="no_helmet">
+        {% else %}
+            <img src="/templates/greenbtn.jpg" alt="yes_helmet">
+        {% endif %}
+        <p>Current Analog Value: {{ value }}</p>
+    </form>
+</body>
+</html>
